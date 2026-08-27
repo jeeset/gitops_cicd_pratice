@@ -1,0 +1,5 @@
+namespace: hello-app
+resources:
+  - namespace.yml
+  - deployment.yml
+  - service.yml
