@@ -1,5 +1,12 @@
-namespace: hello-app
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: hello-app-ns
 resources:
-  - namespace.yml
-  - deployment.yml
-  - service.yml
+- flask_web_app_namespace.yml
+- flask_web_app_deployment.yml
+- flask_web_app_service.yml
+- flask_web_app_ingress.yml
+images:
+- name: flask
+  newName: quay.io/jeeset/flask_3.1.3
+  newTag: v3.1.3

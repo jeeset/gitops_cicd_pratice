@@ -15,7 +15,31 @@ spec:
     spec:
       containers:
       - name: hello-app
-        image: quay.io/jeeset/flask_3.1.3:v3.1.3
+        image: flask
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
+        resources:
+          requests:
+            cpu: 50m
+            memory: 64Mi
+          limits:
+            cpu: 200m
+            memory: 128Mi
+        startupProbe:
+          httpGet:
+            path: /healthz
+            port: 5000
+          periodSeconds: 5
+          failureThreshold: 12
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 5000
+          periodSeconds: 5
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 5000
+          periodSeconds: 10
+          failureThreshold: 3
