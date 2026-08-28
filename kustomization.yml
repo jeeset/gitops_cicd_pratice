@@ -10,3 +10,6 @@ images:
 - name: flask
   newName: quay.io/jeeset/flask_3.1.3
   newTag: v3.1.3
+- name: hello-app
+  newName: quay.io/jeeset/hello-app
+  newTag: 02f9bd8a74c85e892842c0ef052c6f830a0c548a
