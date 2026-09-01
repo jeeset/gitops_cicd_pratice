@@ -56,8 +56,8 @@ kubectl taint nodes --all node-role.kubernetes.io/control-plane:NoSchedule-
 CI 全綠、commit 有進 GitOps Repo、ArgoCD 也 Synced，但叢集裡的 Pod 始終是舊版本，從 ArgoCD UI 的部署詳情發現 image 欄位還是用舊的，回頭檢查 kustomization.yaml，發現 `images:` 底下多出了一筆多餘的 image entry，原因是 flask_ci.yml 中 kustomize edit set image hello-app=...中的 hello-app 這個名稱與 kustomization.yaml 中既有的 `name: flask` 不一致，kustomize 的行為是 `找不到就新增` 而不是報錯，於是每次 CI 都在更新一欄沒有任何資源引用的無效設定。
 
 ## 參考資料
-[安装 kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/)
-[container runtime](https://kubernetes.io/docs/setup/production-environment/container-runtimes/)
-[使用 kubeadm 創建 cluster](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)
-[Argo CD - Kustomize](https://argo-cd.readthedocs.io/en/stable/user-guide/kustomize/)
-[Argo CD - Getting Started](https://argo-cd.readthedocs.io/en/stable/getting_started/)
+- [安装 kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/)
+- [container runtime](https://kubernetes.io/docs/setup/production-environment/container-runtimes/)
+- [使用 kubeadm 創建 cluster](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)
+- [Argo CD - Kustomize](https://argo-cd.readthedocs.io/en/stable/user-guide/kustomize/)
+- [Argo CD - Getting Started](https://argo-cd.readthedocs.io/en/stable/getting_started/)
