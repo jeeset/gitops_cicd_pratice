@@ -1,7 +1,7 @@
 # 專案簡介
 這是一個CI/CD的練習專案，目的是在Kubernetes上架設CI/CD自動化管線，部屬應用程式。
 ## 系統架構
-![GitOps 架構圖](https://github.com/jeeset/gitops_cicd_pratice/blob/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-09-01%20135821.png)
+![GitOps 架構圖](https://github.com/jeeset/gitops_cicd_pratice/blob/main/GitOps%20%E6%9E%B6%E6%A7%8B%E5%9C%96.png)
 
 ## 開發環境與工具
 - OS: Ubuntu 24.04
