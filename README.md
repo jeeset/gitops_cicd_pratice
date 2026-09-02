@@ -29,7 +29,7 @@ Gitops Repo - gitops_cicd_pratice/
 │   └── hello-app-application.yml   # ArgoCD Application(第一次需手動 apply 一次)
 ├── kustomization.yml               # kustomize 管理，CI 在此更新 image tag
 ├── flask_web_app_namespace.yml     # Namespace: hello-app-ns
-├── flask_web_app_deployment.yml    # Deployment: replicas 3 + 三種 probe + resources
+├── flask_web_app_deployment.yml    # Deployment: replicas 2 + 三種 probe + resources
 ├── flask_web_app_service.yml       # Service: ClusterIP， port 86 -> targetPort 5000
 ├── flask_web_app_ingress.yml       # Ingress: nginx ,host hello.local
 └── README.md
