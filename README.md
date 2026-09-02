@@ -19,6 +19,7 @@ App Repo - flask_cicd_pratice
 │       └── flask_ci.yml      # CI 管線:build → push image → 更新 GitOps repo tag
 ├── Dockerfile                # python:3.12-slim，安裝 flask 後啟動 flask_app.py
 ├── flask_app.py              # Flask web app，提供 / 、/hello、/healthz 三個路由
+├── app_test.py               # pytest 測試
 ├── requirements.txt          # flask == 3.1.3
 ├── .gitignore
 └── README.md
