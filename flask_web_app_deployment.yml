@@ -4,7 +4,7 @@ metadata:
   name: hello-app
   namespace: hello-app-ns
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: hello-app
@@ -19,13 +19,6 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
-        resources:
-          requests:
-            cpu: 50m
-            memory: 64Mi
-          limits:
-            cpu: 200m
-            memory: 128Mi
         startupProbe:
           httpGet:
             path: /healthz
