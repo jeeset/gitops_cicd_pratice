@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/jeeset/gitops_cicd_pratice
-    targetRevision: HEAD
+    targetRevision: HEAD # 跟著預設分支最新的那筆
     path: .
   destination:
     server: https://kubernetes.default.svc
