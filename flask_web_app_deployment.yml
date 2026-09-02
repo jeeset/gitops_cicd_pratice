@@ -5,7 +5,8 @@ metadata:
   namespace: hello-app-ns
 spec:
   replicas: 2
-  type: RollingUpdate
+  strategy:
+    type: RollingUpdate
     rollingUpdate:
       maxSurge: 0
       maxUnavailable: 1
